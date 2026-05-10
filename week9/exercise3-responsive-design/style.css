@@ -1,0 +1,187 @@
+/* Exercise 3: Responsive Design
+  ==============================
+*/
+
+/* ===== Görev 1: Kendi Renklerimiz ===== */
+:root {
+  --arka-plan: #f8f9fa;
+  --metin-renk: #333;
+  --koyu-mavi: #1a3a5c;
+  --beyaz: #ffffff;
+}
+
+/* ===== Temel Ayarlar (Mobil Öncelikli) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--arka-plan);
+  color: var(--metin-renk);
+  line-height: 1.6;
+}
+
+/* ===== Görev 2: Tepe Menüsü (Mobilde Alt Alta) ===== */
+header {
+  background-color: var(--koyu-mavi);
+  color: var(--beyaz);
+  padding: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column; /* Mobilde alt alta dizer */
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: column; /* Linkleri alt alta dizer */
+  width: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: var(--beyaz);
+  text-decoration: none;
+  padding: 12px;
+  min-height: 44px; /* Telefonda parmakla rahat basılsın diye */
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* ===== Görev 5: Karşılama Ekranı (Hero) ===== */
+#hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #e9ecef;
+  margin-bottom: 2rem;
+}
+
+#hero h1 {
+  /* Ekran küçüldükçe yazıyı otomatik küçültür (clamp) */
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: 10px;
+}
+
+/* ===== Görev 3: Flexbox Kutuları ===== */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Sığmazsa aşağı atar */
+  gap: 15px;
+}
+
+.flex-card {
+  flex: 1 1 250px; /* En az 250px genişliğinde olur */
+  background: var(--beyaz);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ===== Görev 4: CSS Grid Fotoğraf Galerisi ===== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobilde 1 sütun (alt alta) */
+  gap: 15px;
+}
+
+.grid-item {
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--beyaz);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+/* ===== Footer ve Bölüm Ayarları ===== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #222;
+  color: var(--beyaz);
+  margin-top: 3rem;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ============================================
+   TABLET EKRANLARI (600px ve üzeri)
+   ============================================ */
+@media (min-width: 600px) {
+
+  /* Menü tablet ekranında yan yana gelsin */
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    flex-direction: row;
+    width: auto;
+  }
+
+  /* Grid galeri 2 sütun olsun */
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Öne çıkan büyük fotoğraf 2 sütun yer kaplasın */
+  .featured {
+    grid-column: span 2;
+  }
+}
+
+
+/* ============================================
+   MASAÜSTÜ BİLGİSAYAR (900px ve üzeri)
+   ============================================ */
+@media (min-width: 900px) {
+
+  /* Grid galeri büyük ekranda 3 sütun olsun */
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* ============================================
+   BÜYÜK EKRANLAR (1200px ve üzeri)
+   ============================================ */
+@media (min-width: 1200px) {
+  
+  /* Ekstra bir güzellik: Kartların üzerine gelince hafifçe yukarı kalsın */
+  .flex-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+}

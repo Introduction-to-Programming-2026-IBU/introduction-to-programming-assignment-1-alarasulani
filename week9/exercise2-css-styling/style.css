@@ -1,0 +1,125 @@
+/*
+  Exercise 2: CSS Styling
+  ========================
+*/
+
+/* Görev 2: Kendi Renklerimizi Belirleme */
+:root {
+  --ana-renk: #0056b3;
+  --arkaplan: #f4f4f4;
+  --yazi-renk: #333333;
+}
+
+/* Görev 3: Temel Ayarlar (Reset) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--arkaplan);
+  color: var(--yazi-renk);
+  margin: 0;
+}
+
+/* Görev 3: Başlıklar ve Paragraf Ayarları */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid var(--ana-renk);
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+h3 {
+  color: var(--ana-renk);
+}
+
+/* Paragrafların ilk harfini büyütme */
+p::first-letter {
+  font-size: 150%;
+  font-weight: bold;
+  color: var(--ana-renk);
+}
+
+/* Görev 3: Menü (Navigasyon) Linkleri */
+nav {
+  background-color: #222;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+}
+
+nav a:hover {
+  background-color: var(--ana-renk);
+  border-radius: 5px;
+}
+
+nav a:focus {
+  outline: 3px solid orange;
+}
+
+/* Görev 4: Tepe Kısmı (Hero) */
+#hero {
+  background-color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Görev 4: Kartlar (Kutucuklar) */
+.card-grid {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+/* Görev 5: Sıralı Renkli Liste */
+.fancy-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fancy-list li {
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+/* Tek sayılı satırlar gri */
+.fancy-list li:nth-child(odd) {
+  background-color: #e9ecef;
+}
+
+/* Çift sayılı satırlar beyaz */
+.fancy-list li:nth-child(even) {
+  background-color: white;
+}
+
+/* Görev 6: En Alt Kısım (Footer) */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
