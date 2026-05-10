@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms & Validation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Registration Form</h1>
+    <p>Complete all required fields to create your account.</p>
+  </header>
+
+  <main>
+
+    <div id="success-message" class="hidden">
+      <h2>🎉 Registration Successful!</h2>
+      <p>Welcome aboard! Your account has been created.</p>
+    </div>
+
+    <form id="registration-form" novalidate>
+
+      <div class="form-group">
+        <label for="full-name">Full Name *</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" />
+        <span class="error-msg" id="error-full-name"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" />
+        <span class="error-msg" id="error-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" placeholder="Min. 8 characters" />
+        <span class="error-msg" id="error-password"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password *</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Repeat password" />
+        <span class="error-msg" id="error-confirm-password"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="birth-date">Birth Date *</label>
+        <input type="date" id="birth-date" name="birth-date" />
+        <span class="error-msg" id="error-birth-date"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender">
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <span class="error-msg" id="error-gender"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" placeholder="e.g. North Macedonia" />
+        <span class="error-msg" id="error-country"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="bio">Short Bio</label>
+        <textarea id="bio" name="bio" rows="3" placeholder="Tell us a bit about yourself..."></textarea>
+        <span class="error-msg" id="error-bio"></span>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="terms" name="terms" />
+        <label for="terms">I agree to the Terms & Conditions *</label>
+        <span class="error-msg" id="error-terms"></span>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit-btn">Create Account</button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <footer>
+    <p>Week 9 · Exercise 5 · Forms & Validation</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

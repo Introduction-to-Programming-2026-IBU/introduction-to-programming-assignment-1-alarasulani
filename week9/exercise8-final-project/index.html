@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>✅ Elite Task Manager</h1>
+    <div class="stats">
+      <span id="total-tasks">Total: 0</span> | <span id="completed-tasks">Done: 0</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="What needs to be done?" required />
+        <select id="priority-input">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit" id="add-btn">Add Task</button>
+      </form>
+    </section>
+
+    <section class="filter-section">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="pending">Pending</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button id="clear-completed">Clear Done</button>
+    </section>
+
+    <ul id="task-list">
+      <!-- Tasks will appear here -->
+    </ul>
+  </main>
+
+  <footer>
+    <p>Final Project · Web Development Course · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
